@@ -8,7 +8,7 @@ export default function CircleGrid() {
 
   useEffect(() => {
     if (container.current) {
-      // Animate the opacity from 0 to 1 over 1 second
+      
       container.current.style.transition = 'opacity 1s';
       container.current.style.opacity = '1';
     }

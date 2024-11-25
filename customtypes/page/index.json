@@ -27,6 +27,30 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "pricing": {
+              "type": "SharedSlice"
+            },
+            "hero_2": {
+              "type": "SharedSlice"
+            },
+            "construction": {
+              "type": "SharedSlice"
+            },
+            "team": {
+              "type": "SharedSlice"
+            },
+            "integration": {
+              "type": "SharedSlice"
+            },
+            "portfolio": {
+              "type": "SharedSlice"
+            },
+            "showcase": {
+              "type": "SharedSlice"
+            },
+            "bento": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             },

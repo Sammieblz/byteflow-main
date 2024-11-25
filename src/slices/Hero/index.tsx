@@ -15,13 +15,13 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
-    <Bounded
+    <div // change to div or section later
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="text-center"
+      className="text-center mt-10"
     >
       <div className="relative">
-        <CircleGrid />
+        
         {isFilled.richText(slice.primary.heading) && (
           <h1 className="text-balanced text-center text-5xl font-medium md:text-7xl">
             <PrismicRichText field={slice.primary.heading} />
@@ -45,19 +45,24 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 
         )}
 
-        {isFilled.image(slice.primary.image) && (
-          <div className="glass-container mt-16 w-fit">
-            <div className="absolute inset-0 -z-10 bg-blue-500/30 blur-2xl filter" />
-            <PrismicNextImage className="rounded-lg" field={slice.primary.image} />
-          </div>
-          
+        <Bounded className="-mt-20">
+          {isFilled.image(slice.primary.image) && (
+            <div className="glass-container mt-16 w-fit">
+              <div className="absolute inset-0 -z-10 bg-blue-500/30 blur-2xl filter" />
+              <PrismicNextImage className="rounded-lg" field={slice.primary.image} />
+            </div>
+            
 
-        )}
+          )}
+          
+        </Bounded>
+
+
 
         
 
       </div>
-    </Bounded>
+    </div>
   );
 };
 
