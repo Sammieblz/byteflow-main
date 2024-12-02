@@ -16,7 +16,7 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full min-h-screen bg-gradient-to-b from-gray-800 to-gray-900 px-6 py-12"
+      className="w-full min-h-screen px-6 py-12"
     >
       {/* Section Heading */}
       <div className="text-center mb-12">

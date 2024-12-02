@@ -27,6 +27,21 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "get_started": {
+              "type": "SharedSlice"
+            },
+            "action": {
+              "type": "SharedSlice"
+            },
+            "values": {
+              "type": "SharedSlice"
+            },
+            "service_options": {
+              "type": "SharedSlice"
+            },
+            "services": {
+              "type": "SharedSlice"
+            },
             "pricing": {
               "type": "SharedSlice"
             },

@@ -1,8 +1,8 @@
 {
-  "id": "pricing",
+  "id": "service_options",
   "type": "SharedSlice",
-  "name": "Pricing",
-  "description": "Pricing",
+  "name": "ServiceOptions",
+  "description": "ServiceOptions",
   "variations": [
     {
       "id": "default",
@@ -12,46 +12,54 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "heading": {
+        "headline": {
           "type": "StructuredText",
           "config": {
-            "label": "Heading",
+            "label": "Headline",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,strong,em"
+            "single": "heading3,heading4"
           }
         },
-        "body": {
+        "text": {
           "type": "StructuredText",
           "config": {
-            "label": "Body",
+            "label": "Text",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
+            "multi": "paragraph,list-item,o-list-item,strong,em"
           }
         },
-        "pricecards": {
+        "services_list": {
           "type": "Group",
           "config": {
-            "label": "PriceCards",
+            "label": "Services List",
             "repeat": true,
             "fields": {
-              "heading": {
-                "type": "StructuredText",
+              "icon_illustration": {
+                "type": "Image",
                 "config": {
-                  "label": "Heading",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "heading5"
+                  "label": "Icon Illustration",
+                  "constraint": {},
+                  "thumbnails": []
                 }
               },
-              "body": {
+              "service_name": {
                 "type": "StructuredText",
                 "config": {
-                  "label": "Body",
+                  "label": "Service Name",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "paragraph,strong,em,list-item,o-list-item,rtl"
+                  "multi": "heading3,heading4,strong,em"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em,o-list-item,list-item"
                 }
               }
             }

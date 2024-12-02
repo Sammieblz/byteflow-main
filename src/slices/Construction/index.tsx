@@ -16,7 +16,7 @@ const Construction = ({ slice }: ConstructionProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex min-h-screen items-center justify-center bg-gradient-to-b from-gray-800 to-gray-900 px-6 py-12"
+      className="flex min-h-screen items-center justify-center px-6 py-12"
     >
       <div className="text-center max-w-4xl mx-auto">
         {/* Heading */}
@@ -47,7 +47,7 @@ const Construction = ({ slice }: ConstructionProps): JSX.Element => {
         <div className="w-full max-w-xs mx-auto">
           <PrismicNextImage
             field={slice.primary.image}
-            className="rounded-lg shadow-lg object-cover w-full h-auto"
+            className="object-cover w-full h-auto"
           />
         </div>
       </div>

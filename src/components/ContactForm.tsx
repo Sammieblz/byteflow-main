@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
+import clsx from "clsx";
 
 type FormData = {
   firstName: string;
@@ -14,7 +15,7 @@ type FormData = {
   terms: boolean;
 };
 
-const ContactForm: React.FC = () => {
+const ContactForm: React.FC = (...restProps) => {
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -219,7 +220,9 @@ const ContactForm: React.FC = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full mt-6 p-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
+          className={clsx( "w-full mt-6 p-4 focus:ring-offset-3 relative rounded-md border border-blue-100/20 bg-blue-200/10 px-4 py-2 text-blue-200 outline-none ring-blue-300 transition-colors after:absolute after:inset-0 after:-z-10 after:animate-pulse after:rounded-full after:bg-blue-100 after:bg-opacity-0 after:blur-md after:transition-all after:duration-500 hover:border-blue-200/40 hover:text-blue-300 after:hover:bg-opacity-15 focus:ring-2")}
+  
+          {...restProps}
         >
           Submit
         </button>

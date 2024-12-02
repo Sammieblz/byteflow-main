@@ -1,8 +1,8 @@
 {
-  "id": "pricing",
+  "id": "values",
   "type": "SharedSlice",
-  "name": "Pricing",
-  "description": "Pricing",
+  "name": "Values",
+  "description": "Values",
   "variations": [
     {
       "id": "default",
@@ -12,46 +12,62 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "heading": {
+        "header": {
           "type": "StructuredText",
           "config": {
-            "label": "Heading",
+            "label": "Header",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,strong,em"
+            "multi": "heading3,heading4"
           }
         },
-        "body": {
+        "headline": {
           "type": "StructuredText",
           "config": {
-            "label": "Body",
+            "label": "Headline",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
+            "multi": "paragraph,heading5,strong,list-item"
           }
         },
-        "pricecards": {
+        "value_cards": {
           "type": "Group",
           "config": {
-            "label": "PriceCards",
+            "label": "Value Cards",
             "repeat": true,
             "fields": {
+              "icon": {
+                "type": "Select",
+                "config": {
+                  "label": "Icon",
+                  "placeholder": "",
+                  "options": [
+                    "lightBulb",
+                    "shield",
+                    "handShake",
+                    "arrowUp",
+                    "trophy",
+                    "balancedScale"
+                  ],
+                  "default_value": "lightBulb"
+                }
+              },
               "heading": {
                 "type": "StructuredText",
                 "config": {
                   "label": "Heading",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "heading5"
+                  "multi": "heading4,heading5,strong,em,heading3,heading6"
                 }
               },
-              "body": {
+              "text": {
                 "type": "StructuredText",
                 "config": {
-                  "label": "Body",
+                  "label": "Text",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "paragraph,strong,em,list-item,o-list-item,rtl"
+                  "multi": "paragraph,strong,em,list-item,o-list-item"
                 }
               }
             }

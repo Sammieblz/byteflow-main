@@ -3,29 +3,29 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"heading": {
+			"header": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading2",
+						"type": "heading3",
 						"content": {
-							"text": "Night"
+							"text": "Actually"
 						}
 					}
 				]
 			},
-			"body": {
+			"headline": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Occaecat et do ex est velit. Proident laborum tempor occaecat reprehenderit non excepteur eu minim irure velit. Officia voluptate eu veniam deserunt reprehenderit."
+							"text": "Magna culpa cillum mollit minim est qui. Ad anim do incididunt eiusmod officia elit nulla veniam nisi id duis esse quis ipsum."
 						}
 					}
 				]
 			},
-			"pricecards": {
+			"value_cards": {
 				"__TYPE__": "GroupContentType",
 				"value": [
 					{
@@ -37,26 +37,34 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading5",
+											"type": "heading4",
 											"content": {
-												"text": "Butter"
+												"text": "Phrase"
 											}
 										}
 									]
 								}
 							],
 							[
-								"body",
+								"text",
 								{
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
 											"type": "paragraph",
 											"content": {
-												"text": "Quis aliquip est veniam irure culpa nisi duis do voluptate pariatur laboris laborum incididunt cupidatat. Nostrud ut non Lorem minim voluptate sint irure dolore laboris consectetur."
+												"text": "Non officia incididunt ut consequat velit deserunt velit exercitation velit dolore. Nisi minim qui nisi reprehenderit nulla cillum id voluptate deserunt."
 											}
 										}
 									]
+								}
+							],
+							[
+								"icon",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "lightBulb",
+									"type": "Select"
 								}
 							]
 						]
