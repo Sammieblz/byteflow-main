@@ -792,6 +792,7 @@ export interface IntegrationSliceDefaultPrimaryRepeatableZoneItem {
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
+   * - **Default Value**: cloudflare
    * - **API ID Path**: integration.default.primary.repeatable_zone[].icon
    * - **Documentation**: https://prismic.io/docs/field#select
    */
@@ -805,6 +806,12 @@ export interface IntegrationSliceDefaultPrimaryRepeatableZoneItem {
     | "vercel"
     | "flutter"
     | "react"
+    | "python"
+    | "javascript"
+    | "html"
+    | "tailwind"
+    | "mysql",
+    "filled"
   >;
 }
 

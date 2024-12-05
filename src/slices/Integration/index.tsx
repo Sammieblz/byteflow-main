@@ -8,17 +8,14 @@ import {
 import StarBackground from "./StarBackground";
 import Image from "next/image";
 
-import background from "./dark-gradient.jpg";
+import background from "./dark-gradient1.jpg";
 import React from "react";
 
-import {FaGithub, FaCloudflare, FaFigma, FaWix, FaReact} from "react-icons/fa6";
-import { RiNextjsFill } from 'react-icons/ri';
+import {FaGithub, FaCloudflare, FaFigma, FaWix, FaReact, FaPython, FaJs, FaHtml5} from "react-icons/fa6";
+import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri';
 import { IoLogoFirebase } from "react-icons/io5";
 import { BiLogoFlutter } from "react-icons/bi"
-import { SiVercel } from "react-icons/si";
-
-import StylizedLogoMark from "./StylizedLogoMark";
-
+import { SiVercel, SiMysql  } from "react-icons/si";
 /**
  * Props for `Integrations`.
  */
@@ -39,7 +36,11 @@ const Integration = ({ slice }: IntegrationsProps): JSX.Element => {
     flutter: <BiLogoFlutter />,
     vercel: <SiVercel />,
     react: <FaReact />,
-
+    python: <FaPython />,
+    javascript: <FaJs />,
+    html: <FaHtml5 />,
+    tailwind: <RiTailwindCssFill />,
+    mysql: <SiMysql />
   }
   return (
     <Bounded
@@ -75,7 +76,7 @@ const Integration = ({ slice }: IntegrationsProps): JSX.Element => {
                 </>
               )}
               <div
-                className="pulsing-icon flex aspect-square shrink-0 items-center justify-center rounded-full border border-blue-50/30 bg-blue-50/25 p-3 text-3xl
+                className="pulsing-icon flex aspect-square shrink-2 items-center justify-center rounded-full border border-blue-50/30 bg-blue-50/25 p-3 text-3xl
                 text-blue-100 opacity-90 md:text-4xl lg:text-5xl"
               >
                 {item.icon && icons[item.icon]}

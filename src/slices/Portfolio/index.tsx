@@ -47,10 +47,10 @@ const Portfolio = ({ slice }: PortfolioProps): JSX.Element => {
                 'border border-transparent'
               )}
             >
-              <h4 className="text-2xl font-bold mb-2">
+              <h4 className="text-2xl text-center font-bold mb-2">
                 <PrismicRichText field={item.title} />
               </h4>
-              <div className="text-slate-300 mb-4">
+              <div className="text-slate-300 text-center mb-4">
                 <PrismicRichText field={item.body} />
               </div>
               <PrismicNextImage field={item.image} className="w-full h-auto rounded-md mb-4" />

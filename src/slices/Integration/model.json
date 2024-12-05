@@ -50,8 +50,14 @@
                     "wix",
                     "vercel",
                     "flutter",
-                    "react"
-                  ]
+                    "react",
+                    "python",
+                    "javascript",
+                    "html",
+                    "tailwind",
+                    "mysql"
+                  ],
+                  "default_value": "cloudflare"
                 }
               }
             }

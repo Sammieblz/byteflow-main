@@ -47,14 +47,14 @@ const Showcase = ({ slice }: ShowcaseProps): JSX.Element => {
           <div className="w-fit rounded-lg bg-blue-500/35 p-4 text-3xl">
             <>{slice.primary.icon && icons[slice.primary.icon]}</>
           </div>
-          <div className="mt-6 text-2xl font-normal">
+          <div className="mt-6 text-2xl text-center font-normal">
             <PrismicRichText field={slice.primary.subheading} />
           </div>
 
-          <div className="prose prose-invert mt-4 max-w-xl">
+          <div className="prose prose-invert text-center mt-4 max-w-xl">
             <PrismicRichText field={slice.primary.body} />
           </div>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center mr-8">
             <ButtonLink field={slice.primary.button_link} className="mt-6">
               {slice.primary.button_text || "Our Team"}
             </ButtonLink>

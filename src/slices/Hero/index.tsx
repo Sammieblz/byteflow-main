@@ -30,11 +30,18 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         )}
 
         {isFilled.richText(slice.primary.body) && (
-          <div className="mx-auto mt-6 mb-8 max-w-md text-balance text-slate-300">
-            <PrismicRichText field={slice.primary.body} />
+          <div className="mx-auto max-w-screen-lg text-lg md:text-xl text-gray-300 leading-relaxed p-6">
+            <PrismicRichText
+              field={slice.primary.body}
+              components={{
+                paragraph: ({ children }) => (
+                  <p className="w-full text-center tracking-wide">
+                    {children}
+                  </p>
+                ),
+              }}
+            />
           </div>
-          
-
         )}
         
         {isFilled.link(slice.primary.button_link) && (
@@ -45,7 +52,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 
         )}
 
-        <Bounded className="-mt-20">
+        <Bounded className="-mt-24">
           {isFilled.image(slice.primary.image) && (
             <div className="glass-container mt-16 w-fit">
               <div className="absolute inset-0 -z-10 bg-blue-500/30 blur-2xl filter" />

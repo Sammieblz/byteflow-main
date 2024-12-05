@@ -200,7 +200,6 @@ const ContactForm: React.FC = (...restProps) => {
             value={formData.message}
             onChange={handleChange}
             className="w-full h-32 p-4 rounded-md bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
           ></textarea>
         </div>
 
@@ -224,7 +223,7 @@ const ContactForm: React.FC = (...restProps) => {
   
           {...restProps}
         >
-          Submit
+          Take a Byte
         </button>
       </form>
     </div>
