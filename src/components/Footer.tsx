@@ -26,6 +26,10 @@ export default async function Footer() {
                 ))}
             </ul>
         </nav>
+         {/* Trademark and Copyright */}
+      <div className="text-center text-sm md:text-base mt-4 md:mt-0">
+        <p className="text-slate-400">&copy; {new Date().getFullYear()} BYTEFLOW, LLC. All Rights Reserved.</p>
+      </div>
     </footer>
   )
 }

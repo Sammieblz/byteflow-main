@@ -53,7 +53,7 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
             <div className="w-full h-96 relative">
               <PrismicNextImage
                 field={item.profilepic}
-                className="absolute inset-0 w-full h-94 object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </div>
 
