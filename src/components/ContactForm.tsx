@@ -1,8 +1,10 @@
+
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import clsx from "clsx";
+import TermsModal from "./TermsModal";
 
 type FormData = {
   firstName: string;
@@ -15,7 +17,7 @@ type FormData = {
   terms: boolean;
 };
 
-const ContactForm: React.FC = (...restProps) => {
+const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -26,6 +28,8 @@ const ContactForm: React.FC = (...restProps) => {
     message: "",
     terms: false,
   });
+
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -49,21 +53,21 @@ const ContactForm: React.FC = (...restProps) => {
     e.preventDefault();
 
     const templateParams = {
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        phoneNumber: formData.phoneNumber,
-        service: formData.service,
-        role: formData.role,
-        message: formData.message,
-      };
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phoneNumber: formData.phoneNumber,
+      service: formData.service,
+      role: formData.role,
+      message: formData.message,
+    };
 
     emailjs
       .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID || "",
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "",
-        { ...formData },
-        process.env.REACT_APP_EMAILJS_USER_ID || ""
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID || ""
       )
       .then(
         () => {
@@ -72,8 +76,8 @@ const ContactForm: React.FC = (...restProps) => {
             text: "Your message has been sent successfully.",
             icon: "success",
             confirmButtonColor: "#3085d6",
-            background: "#1a202c", // Dark mode background
-            color: "#fff", // Text color for dark mode
+            background: "#1a202c",
+            color: "#fff",
           });
           setFormData({
             firstName: "",
@@ -93,8 +97,8 @@ const ContactForm: React.FC = (...restProps) => {
             text: "Something went wrong. Please try again later.",
             icon: "error",
             confirmButtonColor: "#e53e3e",
-            background: "#1a202c", // Dark mode background
-            color: "#fff", // Text color for dark mode
+            background: "#1a202c",
+            color: "#fff",
           });
         }
       );
@@ -112,7 +116,6 @@ const ContactForm: React.FC = (...restProps) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          {/* First Name */}
           <input
             type="text"
             name="firstName"
@@ -122,7 +125,6 @@ const ContactForm: React.FC = (...restProps) => {
             className="p-4 rounded-md bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
-          {/* Last Name */}
           <input
             type="text"
             name="lastName"
@@ -132,7 +134,6 @@ const ContactForm: React.FC = (...restProps) => {
             className="p-4 rounded-md bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
-          {/* Email */}
           <input
             type="email"
             name="email"
@@ -142,7 +143,6 @@ const ContactForm: React.FC = (...restProps) => {
             className="p-4 rounded-md bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
-          {/* Phone Number */}
           <input
             type="text"
             name="phoneNumber"
@@ -154,7 +154,6 @@ const ContactForm: React.FC = (...restProps) => {
           />
         </div>
 
-        {/* Service Selection */}
         <div className="mt-6">
           <select
             name="service"
@@ -172,7 +171,6 @@ const ContactForm: React.FC = (...restProps) => {
           </select>
         </div>
 
-        {/* Role in Business */}
         <div className="mt-6 grid grid-cols-2 gap-4">
           {["Business Owner", "Service Provider", "Potential Partner", "Investor Inquiry", "Other"].map(
             (role, idx) => (
@@ -192,7 +190,6 @@ const ContactForm: React.FC = (...restProps) => {
           )}
         </div>
 
-        {/* Message */}
         <div className="mt-6">
           <textarea
             name="message"
@@ -213,19 +210,30 @@ const ContactForm: React.FC = (...restProps) => {
             className="form-checkbox text-blue-500"
             required
           />
-          <span>I agree to the Terms</span>
+          <span>
+            I agree to the{" "}
+            <button
+              type="button"
+              className="underline text-blue-400 hover:text-blue-500"
+              onClick={() => setModalOpen(true)}
+            >
+              Terms of Agreement and Privacy Policy
+            </button>
+          </span>
         </div>
 
-        {/* Submit Button */}
         <button
           type="submit"
-          className={clsx( "w-full mt-6 p-4 focus:ring-offset-3 relative rounded-md border border-blue-100/20 bg-blue-200/10 px-4 py-2 text-blue-200 outline-none ring-blue-300 transition-colors after:absolute after:inset-0 after:-z-10 after:animate-pulse after:rounded-full after:bg-blue-100 after:bg-opacity-0 after:blur-md after:transition-all after:duration-500 hover:border-blue-200/40 hover:text-blue-300 after:hover:bg-opacity-15 focus:ring-2")}
-  
-          {...restProps}
+          className={clsx(
+            "w-full mt-6 p-4 focus:ring-offset-3 relative rounded-md border border-blue-100/20 bg-blue-200/10 px-4 py-2 text-blue-200 outline-none ring-blue-300 transition-colors after:absolute after:inset-0 after:-z-10 after:animate-pulse after:rounded-full after:bg-blue-100 after:bg-opacity-0 after:blur-md after:transition-all after:duration-500 hover:border-blue-200/40 hover:text-blue-300 after:hover:bg-opacity-15 focus:ring-2"
+          )}
         >
           Take a Byte
         </button>
       </form>
+      
+      {/* Modal */}
+      <TermsModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 };

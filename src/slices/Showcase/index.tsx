@@ -57,7 +57,7 @@ const Showcase = ({ slice }: ShowcaseProps): JSX.Element => {
           <div className="prose prose-invert text-center mt-4 max-w-xl">
             <PrismicRichText field={slice.primary.body} />
           </div>
-          <div className="mt-6 flex flex-col items-center mr-8">
+          <div className="mt-6 flex flex-col items-center mr-4">
             <ButtonLink field={slice.primary.button_link} className="mt-6">
               {slice.primary.button_text || "Our Team"}
             </ButtonLink>

@@ -74,7 +74,7 @@ const ServiceOptions = ({ slice }: ServiceOptionsProps): JSX.Element => {
             )}
 
             {/* Service Content */}
-            <div className="flex-1 flex flex-col gap-6 text-white">
+            <div className="flex-1 flex flex-col gap-6 text-white text-center">
               {item.service_name && (
                 <PrismicRichText
                   field={item.service_name}
