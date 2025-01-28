@@ -73,7 +73,7 @@ const ContactForm: React.FC = () => {
         () => {
           Swal.fire({
             title: "Success!",
-            text: "Your message has been sent successfully.",
+            html: 'Your message has been sent successfully! Please <a href="https://calendly.com/byteflowservices" target="_blank" style="color: #3085d6;">schedule a meeting 📆</a> if you haven\'t.',
             icon: "success",
             confirmButtonColor: "#3085d6",
             background: "#1a202c",
@@ -94,7 +94,7 @@ const ContactForm: React.FC = () => {
           console.error("Email sending error:", error);
           Swal.fire({
             title: "Error!",
-            text: "Something went wrong. Please try again later.",
+            text: "Something went wrong. Try again☹️",
             icon: "error",
             confirmButtonColor: "#e53e3e",
             background: "#1a202c",

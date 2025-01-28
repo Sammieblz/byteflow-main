@@ -17,7 +17,7 @@
     "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.1",
     "@lottiefiles/dotlottie-react": "^0.9.2",
-    "@prismicio/client": "^7.11.0",
+    "@prismicio/client": "^7.15.1",
     "@prismicio/next": "^1.7.0",
     "@prismicio/react": "^2.9.0",
     "animated-backgrounds": "^1.0.11",
