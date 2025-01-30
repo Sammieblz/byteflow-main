@@ -4,6 +4,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 
 const dmSans = DM_Sans({
@@ -25,12 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${roboto_mono.variable}`}>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className="bg-[#070815] text-white">
         <Header />
         <main>{children}</main>
-        
         <Footer/>
-        </body>
+      </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
